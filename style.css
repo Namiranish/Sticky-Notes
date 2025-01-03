@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+VA+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+
+body {
+    background-color: #f9fafb;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.message {
+    width: 50%;
+    padding: 20px;
+    background: linear-gradient(135deg, #6c63ff, #857dfa);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.message div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    resize: none;
+    font-family: inherit;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+}
+
+textarea::placeholder {
+    color: #aaa;
+}
+
+button {
+    padding: 15px;
+    background-color: #fff;
+    color: #6c63ff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #857dfa;
+    color: white;
+}
+
+.displayMessage {
+    width: 50%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.displayMessage h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #6c63ff;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 10px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #222223 #f9fafb;
+}
+
+.notes-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.notes-container::-webkit-scrollbar-track {
+    background: #f9fafb;
+    border-radius: 10px;
+}
+
+.notes-container::-webkit-scrollbar-thumb {
+    background: #6c63ff;
+    border-radius: 10px;
+}
+
+.notes-container::-webkit-scrollbar-thumb:hover {
+    background: #857dfa;
+}
+
+.note {
+    border-radius: 10px;
+    padding: 10px;
+    height: 150px;
+    position: relative;
+    overflow-y: auto;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease-in-out;
+    backdrop-filter: none; 
+}
+
+.note:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px); 
+    position: relative;
+}
+
+.note button {
+    position: absolute;
+    top: 0%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 10; 
+}
+
+.note:hover button {
+    opacity: 1;
+    visibility: visible;
+}
+
+.note button:hover {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 0; 
+}
