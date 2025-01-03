@@ -180,3 +180,42 @@ button:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     border-radius: 0; 
 }
+
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .message {
+        width: 100%;
+        order: 1;
+    }
+
+    .displayMessage {
+        width: 100%;
+        order: 2;
+    }
+
+    .notes-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    textarea {
+        height: 120px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .displayMessage h1 {
+        font-size: 18px;
+    }
+}
